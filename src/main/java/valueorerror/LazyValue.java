@@ -20,9 +20,9 @@ final class LazyValue<V, E> implements ValueOrError<V, E> {
 
   @Override
   public ValueOrError<V, E> filterValue(Predicate<V> valuePredicate,
-                                        Supplier<E> errorSupplier) {
+                                        Function<V, E> errorMapper) {
     return new LazyProxy<>(() -> valuePredicate.test(value()) ? new LazyValue<>(
-      this::value) : new LazyError<>(errorSupplier));
+      this::value) : new LazyError<>(() -> errorMapper.apply(value())));
   }
 
   @Override

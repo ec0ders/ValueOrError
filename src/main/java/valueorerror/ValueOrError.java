@@ -50,11 +50,11 @@ public interface ValueOrError<V, E> {
 
   static <V, E> ValueOrError<V, E> ofNullableSupplier(Supplier<V> valueOrNullSupplier, Supplier<E> errorSupplier) {
     return ValueOrError.<V, E>ofSupplier(valueOrNullSupplier)
-      .filterValue(Objects::nonNull, errorSupplier);
+      .filterValue(Objects::nonNull, v -> errorSupplier.get());
   }
 
   ValueOrError<V, E> filterValue(Predicate<V> valuePredicate,
-                                 Supplier<E> errorSupplier);
+                                 Function<V, E> errorMapper);
 
   <V2> ValueOrError<V2, E> mapValue(Function<V, V2> mapper);
 

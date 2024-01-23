@@ -16,7 +16,7 @@ final class LazyError<V, E> implements ValueOrError<V, E> {
 
   @Override
   public ValueOrError<V, E> filterValue(Predicate<V> valuePredicate,
-                                        Supplier<E> errorSupplier) {
+                                        Function<V, E> errorMapper) {
     return this;
   }
 
