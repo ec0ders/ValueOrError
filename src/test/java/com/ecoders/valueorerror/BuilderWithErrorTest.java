@@ -1,8 +1,6 @@
 package com.ecoders.valueorerror;
 
 import java.util.Objects;
-import valueorerror.BuilderWithError;
-import valueorerror.ValueOrError;
 import static java.util.function.Predicate.not;
 
 public final class BuilderWithErrorTest {

@@ -3,10 +3,9 @@ package com.ecoders.valueorerror;
 import java.util.Objects;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import valueorerror.ValueOrError;
 import static java.util.function.Function.identity;
-import static valueorerror.ValueOrError.errorSupplier;
-import static valueorerror.ValueOrError.ofSupplier;
+import static com.ecoders.valueorerror.ValueOrError.errorSupplier;
+import static com.ecoders.valueorerror.ValueOrError.ofSupplier;
 
 public class ValueOrErrorTest {
 

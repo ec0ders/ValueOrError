@@ -1,4 +1,4 @@
-package valueorerror;
+package com.ecoders.valueorerror;
 
 import java.util.Objects;
 import java.util.function.Consumer;
